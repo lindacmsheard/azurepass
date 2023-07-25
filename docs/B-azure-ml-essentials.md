@@ -1,5 +1,8 @@
 # Azure Machine Learning essentials
 
+On this page, we will ensure you are set up to 
+- [Work interactively](#a-interactive-access-via-portal) on an Azure Machine Learning VM (for example with notebooks)
+- Explore [job submission](#b-job-submission-to-an-azure-ml-compute-target) to an Azure ML remote compute target, to learn about concepts such as pipelines and components
 
 ## Pre-requisites
 Once per team:

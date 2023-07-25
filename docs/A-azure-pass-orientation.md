@@ -2,9 +2,14 @@
 
 You must use a *personal* microsoft address to activate a sponsored Azure Pass (outlook.com, live.com etc). Do not use an address associated with an enterprise microsoft tenant. 
 
-Only one person in each team needs to do this.
+:bulb: Only one person in each team needs to do this.
 
-Activate your pass at aka.ms/azurepass
+Activate your pass at https://aka.ms/azurepass.
+
+Below, we will walk through 
+- a basic [Azure Orientation](#azure-orientation)
+- [Azure Tenant setup](#tenant-setup) for your team
+- [Azure Subscription configuration](#subscription-setup) for the things we want to explore
 
 # Azure Orientation
 
