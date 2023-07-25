@@ -124,6 +124,8 @@ az ml job create -f ./hello-world.yml
 ```
 In the Azure ML Workspace portal, watch a node being provisioned in the compute cluster, and watch the experiment pane for your job execution logs.
 
+![img](img/aml-job.png)
+
 **A few notes about this example:**
 > :bulb: This example simply executes an echo statement in the target compute. Review some of the other examples to see how to upload a source code directory (`code: ./my/local/srcdir`) that becomes the working directory in the target compute, and excute python or R scripts
 >

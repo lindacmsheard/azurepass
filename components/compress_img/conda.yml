@@ -1,0 +1,14 @@
+name: compress_env
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.8
+- pillow
+- scikit-image
+- numpy<=1.23.0
+- pandas
+- matplotlib
+- pip
+- pip:
+  - azureml-mlflow

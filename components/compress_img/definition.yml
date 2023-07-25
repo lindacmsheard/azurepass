@@ -1,0 +1,38 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+type: command
+
+name: compress_images
+display_name: Compress images
+version: 1
+
+inputs:
+  image_folder:
+    type: uri_folder
+  new_size_ratio:
+    type: number
+    default: 0.9
+  height:
+    type: integer
+    default: 64
+  width:
+    type: integer
+    default: 64
+
+outputs:
+  output_folder:
+    type: uri_folder
+
+code: ./src
+
+environment: 
+  image: continuumio/miniconda3:latest
+  conda_file: ./conda.yml
+
+command: >-
+  python compress.py  
+  --image_folder ${{inputs.image_folder}}
+  --new_size_ratio ${{inputs.new_size_ratio}}
+  --output_folder ${{outputs.output_folder}}
+
+# Test locally with 
+# python ./src/compress.py --image_folder ./test/input --new_size_ratio 0.5 --output_folder ./test/output

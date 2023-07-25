@@ -1,0 +1,17 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+# This job lists the contents of two available sample data storage locations
+# run it with `az ml job create -f check-job.yml`
+# review the output files in the outputs directory in the job `outputs + logs` pane
+command: |
+  ls ${{inputs.data_dir}} > outputs/azuremlexamples.txt
+  ls ${{inputs.data_dir2}} > outputs/azuremlexampledata.txt
+inputs:
+  data_dir:
+    type: uri_folder 
+    path: wasbs://datasets@azuremlexamples.blob.core.windows.net/
+  data_dir2:
+    type: uri_folder
+    path: wasbs://data@azuremlexampledata.blob.core.windows.net/pet-images/cat
+environment: 
+    image: library/python:latest
+compute: azureml:cpu-cluster

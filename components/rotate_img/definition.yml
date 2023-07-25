@@ -1,0 +1,28 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+type: command
+
+name: rotate_images
+display_name: Rotate images
+version: 1
+
+inputs:
+  image_folder:
+    type: uri_folder
+  degrees:
+    type: integer
+    default: 90
+outputs:
+  output_folder:
+    type: uri_folder
+
+code: ./src
+
+environment: 
+  image: continuumio/miniconda3:latest
+  conda_file: ./conda.yml
+
+command: >-
+  python rotate.py  
+  --image_folder ${{inputs.image_folder}}
+  --degrees ${{inputs.degrees}}
+  --output_folder ${{outputs.output_folder}}
